@@ -1,0 +1,5 @@
+﻿- Admin nopcommerce dökümantasyon linkleri kaldırılması gerek (Önemli !!) ShowDocumentationReferenceLinks
+----------------------------------------------------- İlk Release
+- Localize edilme işi devam
+- Catalog.Settings-EmailAFrind false yapılacak
+- Catalog.Settings-CompareProducts false

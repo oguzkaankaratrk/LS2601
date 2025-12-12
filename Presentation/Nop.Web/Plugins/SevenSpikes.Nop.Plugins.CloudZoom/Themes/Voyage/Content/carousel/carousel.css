@@ -1,0 +1,500 @@
+﻿/*
+* Copyright 2016 Seven Spikes Ltd. All rights reserved. (http://www.nop-templates.com)
+* http://www.nop-templates.com/t/licensinginfo
+*/
+
+/*.picture-thumbs.in-carousel {
+    width: 120px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+*/
+/*.picture-thumbs.in-carousel {
+    display: block;*/ /*show thumbs & reset css grid*/
+/*max-width: 100%;
+    max-height: 100%;
+    width:100%;
+    height:100%;
+    margin: 10px auto 0;
+    text-align: center;
+}*/
+/*.in-carousel .picture-thumbs-list {
+    margin: 0 -5px;
+}*/
+/*.in-carousel .picture-thumbs-item {
+    display: none;*/ /*hide thumbs until slick slider is loaded*/
+/*padding: 0 5px;
+}
+.picture-thumbs-item.slick-slide {
+    display: block;*/ /*show thumbs after slick slider is loaded*/
+/*}
+.picture-thumbs button + .slick-list {
+    margin: 0 50px;*/ /*reserved spaece for arrow navigation*/
+/*}*/
+
+/* navigation */
+
+/* Sol ok – sağ ok yerine yukarı / aşağı oku daha ortada gösterelim */
+/*.picture-thumbs .slick-prev,
+.picture-thumbs .slick-next {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 24px;
+    border: none;
+    background: transparent;
+}*/
+
+/*.picture-thumbs .slick-prev {
+    top: -20px;
+}
+
+.picture-thumbs .slick-next {
+    bottom: -20px;
+}*/
+
+/*.picture-thumbs .slick-prev,
+.picture-thumbs .slick-next {
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #fff #fff #000;
+    font-size: 0;
+    cursor: pointer;
+}*/
+
+/* THUMBNAIL OKLARINI ANA RESMİN ÜZERİNE TAŞI */
+/*.picture-thumbs .slick-prev,
+.picture-thumbs .slick-next {
+    position: absolute;
+    top: 70%;
+    right: 100%;*/
+/*transform: translateY(-50%);*/
+/*width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 10%;
+    border: none;
+    z-index: 50;
+    cursor: pointer;
+    font-size: 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}*/
+/* Sol ok */
+/*.picture-thumbs .slick-prev {
+    left: calc(100% + 20px);*/ /* Thumbnail kolonunun yanında büyük resim üzerine */
+/*}*/
+
+/* Sağ ok */
+/*.picture-thumbs .slick-next {
+    right: -20px;*/ /* Büyük resmin sağ kenarında */
+/*}*/
+
+/*.in-carousel .slick-dotted .slick-prev,
+.in-carousel .slick-dotted .slick-next {
+    bottom: 20px;
+}*/
+/*.picture-thumbs .slick-prev {
+    left: 0;
+}
+.picture-thumbs .slick-next {
+    right: 0;
+}*/
+/*.picture-thumbs .slick-prev:after {
+    content: "\e914";
+    font-size: 14px;
+}
+.picture-thumbs .slick-next:after {
+    content: "\e915";
+    font-size: 14px;
+}
+.picture-thumbs .slick-prev:hover,
+.picture-thumbs .slick-next:hover {
+	border-color: #000;
+}
+.picture-thumbs .slick-prev.slick-disabled,
+.picture-thumbs .slick-next.slick-disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.slick-dots {
+    margin: 15px 0 0;
+    text-align: center;
+    font-size: 0;
+}
+.slick-dots li {
+    display: inline-block;
+    margin: 0 6px;
+}
+.slick-dots button {
+    width: 8px;
+    height: 8px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background-color: #000;
+    font-size: 0;
+}
+.slick-dots .slick-active button,
+.slick-dots button:hover {
+    border: 1px solid #000;
+    background-color: #fff;
+}*/
+
+/* items */
+
+/*.picture-thumbs a.cloudzoom-gallery {
+    display: block !important;
+    margin: 0 !important;
+    float: none !important;
+    width: auto !important;
+    height: auto !important;
+}*/
+
+/*product-images-flex eklendi */
+/*.product-images-flex {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}*/
+
+/* Küçük resimlerin sol dizilimi */
+/*.product-images-flex .picture-thumbs {
+        width: 110px;*/ /* thumbnail sütunu genişliği */
+/*display: flex;
+        flex-direction: column;
+    }
+
+        .product-images-flex .picture-thumbs .picture-thumbs-list {
+            display: flex !important;
+            flex-direction: column !important;
+        }
+
+        .product-images-flex .picture-thumbs .picture-thumbs-item {
+            padding: 5px 0 !important;
+        }*/
+
+/* Ana resim sağda geniş */
+/*.product-images-flex .picture-wrapper {
+        flex: 1;
+    }*/
+
+/* --- ANA RESİM VE THUMBNAIL KONTEYNERİNİ YAN YANA GETİR --- */
+/*.sevenspikes-cloudzoom-gallery {
+    display: flex !important;
+    flex-direction: row-reverse;*/ /* ters çevir */
+/*gap: 20px;
+}*/
+
+/* --- THUMBNAIL LİSTESİ SOLDA DİKEY --- */
+/*.picture-thumbs.in-carousel {
+    width: 120px !important;
+    margin: 0 !important;*/
+/*order: -1;*/ /*sol tarafa alır*/
+/*}
+
+#picture-thumbs-carousel {
+    height: 550px;*/ /* istediğin kadar */
+/*}
+
+.picture-thumbs .picture-thumbs-item {
+    margin-bottom: 12px;
+}*/
+
+/* Thumbnail görselleri kutulu gibi yap */
+/*.picture-thumbs img.cloud-zoom-gallery-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background: #f7f7f7;*/
+/*padding: 4px;*/
+/*}*/
+
+/* --- ANA RESİM DÜZENİ --- */
+/*.picture-wrapper {
+    flex: 1;
+}
+
+#cloudZoomImage {
+    max-width: 100%;
+    border-radius: 20px;
+}*/
+
+
+/* SOL OK → Ana resmin SOL orta noktası */
+/*.picture-wrapper .slick-prev {
+        left: 16px !important;
+    }*/
+/* SAĞ OK → Ana resmin SAĞ orta noktası */
+/*.picture-wrapper .slick-next {
+        right: 16px !important;
+    }*/
+/* Ortak stil */
+/*.picture-wrapper .zoom-arrows {
+        position: absolute !important;
+        bottom: 24px;*/ /* aşağı konum */
+/*width: 48px;
+        height: 48px;
+        background: #ffffff;
+        border-radius: 50%;
+        box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
+        z-index: 50;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0;
+    }*/
+
+/* Sol ok */
+/*.picture-wrapper .slick-prev.zoom-arrows {
+        right: 90px;*/ /* Nike spacing: sol ok daha içeride */
+/*}*/
+
+/* Sağ ok */
+/*.picture-wrapper .slick-next.zoom-arrows {
+        right: 24px;*/ /* Sağ ok tamamen sağ köşe */
+/*}*/
+
+/* ICONLAR */
+/*.picture-wrapper .slick-prev.zoom-arrows:after {
+        content: "\e914";*/ /* left arrow */
+/*font-size: 18px;
+        color: #000;
+    }
+
+    .picture-wrapper .slick-next.zoom-arrows:after {
+        content: "\e915";*/ /* right arrow */
+/*font-size: 18px;
+        color: #000;
+    }*/
+
+/* Disabled */
+/*.picture-wrapper .slick-prev.slick-disabled,
+    .picture-wrapper .slick-next.slick-disabled {
+        opacity: 0.3;
+        cursor: default;
+    }*/
+
+/* -----------------------------
+   MOVE SLICK ARROWS TO MAIN IMAGE
+------------------------------*/
+/* slick buttons from thumbnail slider */
+/*.picture-thumbs .slick-prev {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 50%;
+    border: none;
+    z-index: 9999;
+    cursor: pointer;
+    font-size: 0;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+}*/
+
+/*.picture-thumbs .slick-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 50%;
+    border: none;
+    z-index: 50;
+    cursor: pointer;
+    font-size: 0;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+}*/
+/* LEFT arrow → main image left side */
+/*.picture-thumbs .slick-prev {
+    left: calc(120px + 24px);*/
+/* 120px = thumbnail kolon genişliği
+       24px = ana resme doğru yaklaşma */
+/*}*/
+
+/* RIGHT arrow → main image right side */
+/*.picture-thumbs .slick-next {
+    right: 24px;
+}*/
+
+/* Arrow Icons */
+/*.picture-thumbs .slick-prev:after {
+    content: "\e914";*/ /* left arrow */
+/*font-size: 20px;
+    color: #000;
+}
+
+.picture-thumbs .slick-next:after {
+    content: "\e915";*/ /* right arrow */
+/*font-size: 20px;
+    color: #000;
+}*/
+/*
+ * CloudZoom Carousel – CLEAN VERSION (Edited by ChatGPT)
+*/
+
+/* -----------------------------
+   THUMBNAIL CONTAINER (LEFT)
+------------------------------*/
+
+.picture-thumbs.in-carousel {
+    width: 10%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/*.picture-thumbs .slick-list,
+.picture-thumbs .slick-track {
+    height: 100% !important;
+
+}*/
+
+.picture-thumbs .picture-thumbs-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px;
+}
+
+.picture-thumbs .picture-thumbs-item {
+    width: 100%;
+    margin-bottom: 8px !important;
+}
+
+/* Thumbnail image styling */
+.picture-thumbs img.cloud-zoom-gallery-img {
+    width: 100%;
+    border-radius: 10px;
+    background: #f7f7f7;
+    display: block;
+}
+.slick-slider .slick-track, .slick-slider .slick-list {
+    height: 38rem !important;
+}
+
+/* -----------------------------
+   MAIN IMAGE AREA (RIGHT)
+------------------------------*/
+
+    .sevenspikes-cloudzoom-gallery {
+    display: flex !important;
+    flex-direction: row-reverse; /* thumbnails left, image right */
+    gap: 16px;
+    position: relative; /*referans noktası.*/
+}
+
+.picture-wrapper {
+    position: relative;
+    flex: 1;
+}
+  
+#cloudZoomImage {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+
+/* Disabled */
+.picture-thumbs .slick-prev.slick-disabled,
+.picture-thumbs .slick-next.slick-disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+
+/* -----------------------------
+   OPTIONAL: MOBILE LAYOUT
+------------------------------*/
+
+@media (max-width: 768px) {
+    .sevenspikes-cloudzoom-gallery {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .picture-thumbs.in-carousel {
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .picture-thumbs .picture-thumbs-list {
+        flex-direction: row !important;
+        gap: 12px;
+    }
+
+    .picture-thumbs .slick-prev,
+    .picture-thumbs .slick-next {
+        top: 100%;
+        transform: none;
+        left: unset;
+        right: unset;
+    }
+}
+/* Ortak stil */
+.zoom-arrows {
+    position: absolute !important;
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 10%;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+    /* Hover efekti */
+    .zoom-arrows:hover {
+        background: #E5E5E5;
+    }
+    .zoom-arrows:active {
+        background: #CACACB;
+    }
+
+/* Sol ok */
+.picture-wrapper .slick-prev.zoom-arrows {
+    right: 90px !important;
+    bottom: 32px !important;
+}
+
+/* Sağ ok */
+.picture-wrapper .slick-next.zoom-arrows {
+    right: 32px !important;
+    bottom: 32px !important;
+}
+
+/* Iconlar */
+.picture-wrapper .slick-prev.zoom-arrows:after {
+    font-family: bootstrap-icons !important;
+    content: "\F284";
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+}
+
+.picture-wrapper .slick-next.zoom-arrows:after {
+    font-family: bootstrap-icons !important;
+    content: "\F285";
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+}
+/* Disabled durum */
+.picture-wrapper .slick-prev.slick-disabled,
+.picture-wrapper .slick-next.slick-disabled {
+    opacity: 0.3;
+    cursor: default;
+}

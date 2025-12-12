@@ -1,0 +1,99 @@
+﻿﻿@{
+Layout = null;
+//title
+NopHtml.AddTitleParts(T("PageTitle.StoreClosed").Text);
+//page class
+NopHtml.AppendPageCssClassParts("html-store-closed-page");
+}
+<div class="page store-closed-page">
+    <div class="page-title">
+        <h1></h1>
+    </div>
+    <div class="page-body">
+    </div>
+</div>
+
+
+<!doctype html>
+<title>Site Maintenance</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins" rel="stylesheet" />
+<style>
+    html,
+    body {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        text-align: center;
+        padding: 0;
+        background: white;
+        color: black;
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    h1 {
+        font-size: 50px;
+        font-weight: 100;
+        text-align: center;
+    }
+
+    body {
+        font-family: "Poppins", sans-serif;
+        font-style: normal;
+        font-weight: 100;
+        font-size: 20px;
+        color: black;
+        text-align: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    article {
+        display: block;
+        width: 700px;
+        padding: 50px;
+        margin: 0 auto;
+    }
+
+    a {
+        color: #fff;
+        display: inline-block;
+        font-size: 60px;
+    }
+
+        a p {
+            display: inline;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+    svg {
+        width: 75px;
+        margin-top: 1em;
+    }
+</style>
+<article>
+    <a href="/" class="logo"><p style="color:#f00">lion</p><p style="color:#000">shop</p></a>
+    <h1>@T("StoreClosed")</h1>
+    <div>
+        <p>@T("StoreClosed.Hint")</p>
+    </div>
+</article>

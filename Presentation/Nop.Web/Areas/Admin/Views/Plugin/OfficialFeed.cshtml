@@ -1,0 +1,34 @@
+﻿@model OfficialFeedPluginSearchModel
+
+@{
+    //page title
+    ViewBag.PageTitle = T("Admin.Configuration.Plugins.OfficialFeed").Text;
+    //active menu item (system name)
+    NopHtml.SetActiveMenuItemSystemName("");
+}
+
+@{
+    const string hideSearchBlockAttributeName = "OfficialFeedPage.HideSearchBlock";
+    var hideSearchBlock = await genericAttributeService.GetAttributeAsync<bool>(await workContext.GetCurrentCustomerAsync(), hideSearchBlockAttributeName);
+}
+
+<form asp-controller="Plugin" asp-action="OfficialFeed" id="plugins-form-official-feed">
+    <div class="content-header clearfix">
+        <h1 class="float-left">
+            @T("Admin.Configuration.Plugins.OfficialFeed")
+        </h1>
+    </div>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="form-horizontal">
+                <div class="form-horizontal">
+                    <div class="cards-group">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</form>
+
+
