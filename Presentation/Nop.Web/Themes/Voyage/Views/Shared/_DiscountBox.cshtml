@@ -1,18 +1,46 @@
 ﻿@model ShoppingCartModel.DiscountBoxModel
 @if (Model.Display)
 {
-    <div class="coupon-box">
-        <div class="title">
-            <strong>@T("ShoppingCart.DiscountCouponCode")</strong>
+    <div class="coupon-box ls-promo">
+        <div class="ls-promo-button">
+
+        
+        <button type="button"
+                class="ls-promo-toggle"
+                aria-expanded="false"
+                aria-controls="ls-promo-panel">
+            <span class="ls-promo-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-percent" viewBox="0 0 16 16">
+                    <path d="M13.442 2.558a.625.625 0 0 1 0 .884l-10 10a.625.625 0 1 1-.884-.884l10-10a.625.625 0 0 1 .884 0M4.5 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5m7 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5" />
+                </svg>
+            </span>
+            
+            <span class="ls-promo-text">
+                @T("ShoppingCart.DiscountCouponCode")</span>
+        </button>
         </div>
-        <div class="content">
+        
+        <div class="content ls-promo-panel" id="ls-promo-panel" hidden>
             <div class="hint">
                 @T("ShoppingCart.DiscountCouponCode.Tooltip")
             </div>
             <div class="coupon-code">
-                <input name="discountcouponcode" id="discountcouponcode" type="text" class="discount-coupon-code" aria-label="@T("ShoppingCart.DiscountCouponCode.Label")" />
+                <input name="discountcouponcode" 
+                    id="discountcouponcode" 
+                    type="text" 
+                    class="discount-coupon-code"
+                       placeholder="@T("ShoppingCart.DiscountCouponCode.Tooltip")"
+                    aria-label="@T("ShoppingCart.DiscountCouponCode.Label")" />
 
-                <button type="submit" name="applydiscountcouponcode" id="applydiscountcouponcode" class="button-2 apply-discount-coupon-code-button">@T("ShoppingCart.DiscountCouponCode.Button")</button>
+                <button type="submit" 
+                    name="applydiscountcouponcode" 
+                    id="applydiscountcouponcode" 
+                    class="button-2 apply-discount-coupon-code-button">
+                    @T("ShoppingCart.DiscountCouponCode.Button")
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                    </svg>
+                    </button>
             </div>
             @foreach (var message in Model.Messages)
             {
@@ -30,7 +58,7 @@
             }
         </div>
     </div>
-    <script asp-location="Footer">
+   @*  <script asp-location="Footer">
         $(function() {
             $('#discountcouponcode').on('keydown', function (event) {
                 if (event.keyCode == 13) {
@@ -38,6 +66,41 @@
                     return false;
                 }
             });
+        });
+    </script> *@
+
+    <script asp-location="Footer">
+        $(function () {
+
+            // Enter tuşu ile apply
+            $('#discountcouponcode').on('keydown', function (event) {
+                if (event.keyCode == 13) {
+                    $('#applydiscountcouponcode').trigger("click");
+                    return false;
+                }
+            });
+
+            // Toggle open/close
+            $('.ls-promo-toggle').on('click', function () {
+                var $panel = $('#ls-promo-panel');
+                var isOpen = !$panel.is('[hidden]');
+
+                $(this).attr('aria-expanded', (!isOpen).toString());
+
+                if (isOpen) {
+                    $panel.attr('hidden', 'hidden');
+                } else {
+                    $panel.removeAttr('hidden');
+                    $('#discountcouponcode').focus();
+                }
+            });
+
+            // Eğer kupon zaten uygulanmışsa panel otomatik açık kalsın
+            var hasApplied = $('.coupon-box .current-code').length > 0;
+            if (hasApplied) {
+                $('.ls-promo-toggle').attr('aria-expanded', 'true');
+                $('#ls-promo-panel').removeAttr('hidden');
+            }
         });
     </script>
 }
