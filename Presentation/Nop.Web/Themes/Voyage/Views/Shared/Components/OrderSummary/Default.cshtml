@@ -249,6 +249,7 @@
             </div>
             <div class="cart-footer">
                 @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.OrderSummaryCartFooter, additionalData = Model })
+                @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.OrderSummaryCartFooter, additionalData = Model })
                 @if (Model.IsEditable)
                 {
                     <div class="cart-collaterals">
@@ -267,7 +268,7 @@
                     @if (Model.IsEditable)
                     {
                         <div class="title totals-txt">
-                            <span>@T("SevenSpikes.Themes.Voyage.Checkout.Totals")</span>
+                            <span>@T("LionShop.Checkout.Totals")</span>
                         </div>
                     }
                 	@await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.OrderSummaryTotals, additionalData = Model })

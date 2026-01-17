@@ -20178,7 +20178,7 @@
     <Value>{0} points</Value>
   </LocaleResource>
   <LocaleResource Name="ShoppingCart.Totals.Shipping">
-    <Value>Shipping</Value>
+    <Value>Delivery</Value>
   </LocaleResource>
   <LocaleResource Name="ShoppingCart.Totals.Shipping.Method">
     <Value>({0})</Value>

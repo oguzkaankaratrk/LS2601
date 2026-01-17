@@ -5487,19 +5487,22 @@ table:not(.breakpoint) .footable-toggle {
 }
 
 .total-info {
-    margin: 0 0 20px;
-    background-color: #f3f3f3;
-    padding: 20px 15px;
+  font-size: 16px;
+  margin: 0 0 20px;
+  /*background-color: #f3f3f3;*/
+  padding: 20px 15px;
 }
 
 .cart-total td {
     width: 50%;
     border: none;
-    padding: 5px 1px;
+    /*padding: 5px 1px;*/
 }
 
 .cart-total-left {
-    text-align: left;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: left;
 }
 
 .cart-total-right {
@@ -5510,6 +5513,13 @@ table:not(.breakpoint) .footable-toggle {
     font-size: 14px;
     font-weight: 600;
 }
+  .cart-total .order-total .inclusive-tax {
+    display: block; /* ALT SATIR */
+    margin-top: -4px;
+    font-size: 14px;
+    color: #6e6e6e;
+    font-weight: 400;
+  }
 
 .terms-of-service {
     max-width: 350px;

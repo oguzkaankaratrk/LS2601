@@ -9,6 +9,9 @@ public partial record OrderTotalsModel : BaseNopModel
         TaxRates = new List<TaxRate>();
         GiftCards = new List<GiftCard>();
     }
+    //updated
+    public int TotalItems { get; set; }
+
     public bool IsEditable { get; set; }
 
     public string SubTotal { get; set; }

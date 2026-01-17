@@ -1148,6 +1148,8 @@ public partial class ShoppingCartModelFactory : IShoppingCartModelFactory
 
         if (cart.Any())
         {
+            //updated
+            model.TotalItems = cart.Sum(x => x.Quantity);
             //subtotal
             var subTotalIncludingTax = await _workContext.GetTaxDisplayTypeAsync() == TaxDisplayType.IncludingTax && !_taxSettings.ForceTaxExclusionFromOrderSubtotal;
             var (orderSubTotalDiscountAmountBase, _, subTotalWithoutDiscountBase, _, _) = await _orderTotalCalculationService.GetShoppingCartSubTotalAsync(cart, subTotalIncludingTax);
@@ -1157,6 +1159,7 @@ public partial class ShoppingCartModelFactory : IShoppingCartModelFactory
             var currentLanguage = await _workContext.GetWorkingLanguageAsync();
             model.SubTotal = await _priceFormatter.FormatPriceAsync(subtotal, true, currentCurrency, currentLanguage.Id, subTotalIncludingTax);
 
+           
             if (orderSubTotalDiscountAmountBase > decimal.Zero)
             {
                 var orderSubTotalDiscountAmount = await _currencyService.ConvertFromPrimaryStoreCurrencyAsync(orderSubTotalDiscountAmountBase, currentCurrency);
