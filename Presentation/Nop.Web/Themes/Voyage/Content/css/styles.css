@@ -5468,6 +5468,18 @@ table:not(.breakpoint) .footable-toggle {
   text-transform: uppercase;
 }
 
+.ls-giftcard-toggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
 
 .coupon-box .ls-promo svg {
   width: 24px;
@@ -5478,9 +5490,25 @@ table:not(.breakpoint) .footable-toggle {
   justify-content: center;
   font-weight: 700;
 }
-.coupon-box .ls-promo .ls-promo-text{
-    color: rebeccapurple !important;
+
+.giftcard-box .ls-giftcard svg {
+  width: 24px;
+  height: 24px;
+  border: 1px solid currentColor;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
 }
+
+.coupon-box .ls-promo .ls-promo-text {
+  color: rebeccapurple !important;
+}
+
+.giftcard-box .ls-giftcard .ls-giftcard-text {
+  color: rebeccapurple !important;
+}
+
 .ls-promo-icon {
   width: 24px;
   height: 24px;
@@ -5489,8 +5517,28 @@ table:not(.breakpoint) .footable-toggle {
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  border-radius: 3px!important;
+  border-radius: 3px !important;
+  box-sizing: border-box;
 }
+
+.ls-giftcard-icon {
+  width: 24px;
+  height: 24px;
+  border: 1px solid currentColor;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  border-radius: 3px !important;
+  box-sizing: border-box;
+}
+
+  .ls-giftcard-icon svg {
+    width: 14px;
+    height: 14px;
+    display: block;
+    border-radius: 0 !important;
+  }
 
 .ls-promo-text {
   padding: 1px 1px;
@@ -5502,15 +5550,26 @@ table:not(.breakpoint) .footable-toggle {
   .ls-promo-text:hover {
     padding: 1px 1px;
     line-height: 18px;
-    background-color: #000000;
+    background-color: #000000 !important;
     color: #ffffff;
     border-radius: 0 !important;
   }
 
-  .ls-promo-text :hover {
+.ls-giftcard-text {
+  padding: 1px 1px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  background-color: transparent;
+}
+
+  .ls-giftcard-text:hover {
+    padding: 1px 1px;
+    line-height: 18px;
     background-color: #000000 !important;
-    color: #ffffff !important;
+    color: #ffffff;
+    border-radius: 0 !important;
   }
+
 /* panel spacing */
 .ls-promo-panel {
   margin-top: 16px;
@@ -5524,6 +5583,22 @@ table:not(.breakpoint) .footable-toggle {
   }
 
     .ls-promo-panel .coupon-code input {
+      flex: 1;
+    }
+
+/* panel spacing */
+.ls-giftcard-panel {
+  margin-top: 16px;
+}
+
+  /* input + button hizalama */
+  .ls-giftcard-panel .coupon-code {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+    .ls-giftcard-panel .coupon-code input {
       flex: 1;
     }
 
@@ -5552,14 +5627,16 @@ table:not(.breakpoint) .footable-toggle {
     height: 36px;
     width: 33%;
   }
+
     .cart-collaterals .coupon-code button svg {
-      margin-left: auto; 
+      margin-left: auto;
       flex-shrink: 0;
       width: 18px;
       height: 18px;
       stroke: #fff;
       fill: none;
     }
+
 .cart-collaterals .message-failure {
   margin: 5px 0 0;
   font-size: 12px;
@@ -5614,17 +5691,55 @@ table:not(.breakpoint) .footable-toggle {
 .terms-of-service {
   max-width: 350px;
   margin: 0 auto 30px;
+  padding-top: 1rem;
 }
 
-  .terms-of-service label:before {
-    top: 3px !important;
-    bottom: auto !important;
+  .terms-of-service label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #111;
+    cursor: pointer;
+  }
+
+    .terms-of-service label:before {
+      top: 3px !important;
+      bottom: auto !important;
+    }
+
+  .terms-of-service #termsofservice {
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    accent-color: #000;
+  }
+
+  .terms-of-service label span {
+    display: inline;
+    padding-left: 6px;
   }
 
   .terms-of-service .read {
-    margin: 0 0 0 3px;
+    display: inline-block;
+    margin-left: 6px;
+    padding: 1px 4px;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    color: inherit;
+    background: transparent;
+    border-radius: 0;
     cursor: pointer;
+    transition: background-color .15s ease, color .15s ease;
   }
+
+    .terms-of-service .read:hover,
+    .terms-of-service .read:focus {
+      background: #000;
+      color: #fff;
+      outline: none;
+    }
 
 .cart-footer .totals-txt {
   display: none;

@@ -258,7 +258,7 @@
                 </div>
                 <aside class="ls-cart-right">
                     <div class="cart-footer">
-                        
+
                         <div class="totals">
                             @if (Model.IsEditable)
                             {
@@ -368,10 +368,20 @@
                                     }
                                 </div>
                             }
+                            <div class="ls-accepted-payments">
+                                <div class="ls-accepted-title">@T("Checkout.Accepted.PaymentMethod")</div>
+                                <div class="ls-payment-icons">
+                                    <img src="~/Themes/Voyage/Content/img/payment/visa.svg" alt="Visa" loading="lazy" />
+                                    <img src="~/Themes/Voyage/Content/img/payment/master.svg" alt="Mastercard" loading="lazy" />
+                                    <img src="~/Themes/Voyage/Content/img/payment/amex.svg" alt="American Express" loading="lazy" />
+                                    <img src="~/Themes/Voyage/Content/img/Payment/paypal.svg" alt="PayPal" loading="lazy" />
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
-                   
+
                 </aside>
             </div>
         </form>
